@@ -1,3 +1,4 @@
+weather=(sunny/rainy/cold)
 weather=str(input("What's the weather like today?")) 
 if the weather= "sunny"
 print("Wear a t-shirt and sunglasses.")
