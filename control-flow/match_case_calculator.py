@@ -14,5 +14,3 @@ match operation:
  case"/":
   result=num1/num2
   print(F" the result is{result}.")
- else:
-   print("Cannot divide by zero.")
