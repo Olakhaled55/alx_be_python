@@ -14,7 +14,7 @@ match operation:
  case"/":
   result=num1/num2
   print(F" the result is{result}.")
-  else:
-    print("Error: Division by zero is not allowed.")
-  case _:
-    print("Invalid operation selected. Please choose one of +, -, *, or /.")
+ else:
+   print("Cannot divide by zero.")
+ case _:
+   print("Invalid operation selected. Please choose one of +, -, *, or /.")
