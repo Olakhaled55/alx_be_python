@@ -16,7 +16,5 @@ match operation:
   print(F" the result is{result}.")
  else:
  print("Cannot divide by zero.")
- case_:
- print("invalid operation please choose one of +, -, *, /.")
-
-       
+else:
+    print("Invalid operation selected. Please choose one of +, -, *, or /.")
