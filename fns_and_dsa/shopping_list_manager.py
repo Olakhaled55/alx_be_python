@@ -18,8 +18,8 @@ def main():
             choice = int(choice)  # Convert the input to an integer
             
             if choice == 1:
-                # Prompt the user to add an item
-                item = input("Enter the item you want to add: ")
+                # Prompt the user to add an item with the corrected input message
+                item = input("Enter the item to add: ")  # Corrected prompt message
                 shopping_list.append(item)  # Add the item to the list
                 print(f"'{item}' has been added to your shopping list.")
             
@@ -56,3 +56,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
