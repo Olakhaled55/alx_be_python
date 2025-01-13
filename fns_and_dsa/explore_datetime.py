@@ -1,33 +1,40 @@
-from datetime import datetime, timedelta
+# Define global conversion factors
+FAHRENHEIT_TO_CELSIUS_FACTOR = 5 / 9
+CELSIUS_TO_FAHRENHEIT_FACTOR = 9 / 5
 
-# Part 1: Display the Current Date and Time
-def display_current_datetime():
-    # Get the current date and time using datetime.now()
-    current_date = datetime.now()
-    
-    # Format the current date and time in the format YYYY-MM-DD HH:MM:SS
-    print(f"Current date and time: {current_date.strftime('%Y-%m-%d %H:%M:%S')}")
+# Function to convert Fahrenheit to Celsius
+def convert_to_celsius(fahrenheit):
+    # Use the global conversion factor for Fahrenheit to Celsius
+    return (fahrenheit - 32) * FAHRENHEIT_TO_CELSIUS_FACTOR
 
-# Part 2: Calculate a Future Date
-def calculate_future_date(days_to_add):
-    # Get the current date
-    current_date = datetime.now()
-    
-    # Calculate the future date by adding the specified number of days
-    future_date = current_date + timedelta(days=days_to_add)
-    
-    # Print the future date in the format YYYY-MM-DD
-    print(f"Future date: {future_date.strftime('%Y-%m-%d')}")
+# Function to convert Celsius to Fahrenheit
+def convert_to_fahrenheit(celsius):
+    # Use the global conversion factor for Celsius to Fahrenheit
+    return (celsius * CELSIUS_TO_FAHRENHEIT_FACTOR) + 32
 
 def main():
-    # Display the current date and time
-    display_current_datetime()
+    try:
+        # User input for temperature
+        temperature = float(input("Enter the temperature to convert: "))
+        
+        # User input for unit (Celsius or Fahrenheit)
+        unit = input("Is this temperature in Celsius or Fahrenheit? (C/F): ").strip().upper()
+
+        if unit == "C":
+            # If the input is in Celsius, convert it to Fahrenheit
+            fahrenheit = convert_to_fahrenheit(temperature)
+            print(f"{temperature}°C is {fahrenheit}°F")
+        elif unit == "F":
+            # If the input is in Fahrenheit, convert it to Celsius
+            celsius = convert_to_celsius(temperature)
+            print(f"{temperature}°F is {celsius}°C")
+        else:
+            print("Invalid unit. Please enter 'C' for Celsius or 'F' for Fahrenheit.")
     
-    # Get the number of days from the user
-    days_to_add = int(input("Enter the number of days to add to the current date: "))
-    
-    # Calculate and display the future date
-    calculate_future_date(days_to_add)
+    except ValueError:
+        # Handle invalid input if the temperature is not a number
+        print("Invalid temperature. Please enter a numeric value.")
 
 if __name__ == "__main__":
     main()
+
